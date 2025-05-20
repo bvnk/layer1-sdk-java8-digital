@@ -14,7 +14,9 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.+'
+        classpath('com.android.tools.build:gradle:2.3.+') {
+            exclude group: 'org.bouncycastle' // need this to avoid verification issues in jreleaser
+        }
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'com.diffplug.spotless:spotless-plugin-gradle:6.11.0'
         classpath 'org.jreleaser:org.jreleaser.gradle.plugin:1.18.0'
